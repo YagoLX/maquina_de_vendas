@@ -4,6 +4,11 @@ from enum import Enum
 from interface.ProdEnum import ProdEnum
 
 maquina = Maquina()
-print(maquina.qualquerr_coisa)
-print(ProdEnum.LEITE.value)
-print(ProdEnum.LEITE.name)
+maquina.gerenciador.rodar(maquina, maquina.compras)
+
+
+
+#ALGUNS TESTES
+#print(maquina.qualquerr_coisa)
+#print(ProdEnum.LEITE.value)
+#print(ProdEnum.LEITE.name)

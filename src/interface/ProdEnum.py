@@ -2,17 +2,17 @@ from enum import Enum
 
 class ProdEnum(Enum):
     #Produtos dosados
-    LEITE = 1
-    CAFE = 2
-    CHA = 3
-    ACHOCOLATADO = 4
-    LACTOBACILOS = 5
+    LEITE = 0
+    CAFE = 1
+    CHA = 2
+    ACHOCOLATADO = 3
+    LACTOBACILOS = 4
 
     #Produtos enlatados
-    BUZZCOLA = 6 #dos simpsons
-    GUARANA = 7
-    MINEIRINHO = 8
-    BRANNDO = 9  #do Idiocracy
-    SUCO = 10 
+    BUZZCOLA = 5 #dos simpsons
+    GUARANA = 6
+    MINEIRINHO = 7
+    BRANNDO = 8  #do Idiocracy
+    SUCO = 9 
 
 
