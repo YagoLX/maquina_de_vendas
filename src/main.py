@@ -1,14 +1,26 @@
-import interface.Menu
-from componentes.Maquina import Maquina
-from enum import Enum
-from interface.ProdEnum import ProdEnum
+from Estoque import Estoque 
+from Maquina  import Maquina
+from MenuAdm import MenuAdm
+from MenuDosada import MenuDosada
+from MenuInicial import MenuInicial
+from MenuLatas import MenuLatas
+from MenuPagamento import MenuPagamento 
 
 maquina = Maquina()
-maquina.gerenciador.rodar(maquina, maquina.compras)
+menus = {
+    "inicial": MenuInicial,
+    "latas": MenuLatas,
+    "adm": MenuAdm,
+    "dosada": MenuDosada,
+    "pagamento":MenuPagamento,
+}
+
+menu_atual = menus["inicial"]()
+
+while menu_atual != None:
+    prox = menu_atual.rodar(maquina)
+    if prox == None:
+        break
+    menu_atual = menus[prox]()
 
 
-
-#ALGUNS TESTES
-#print(maquina.qualquerr_coisa)
-#print(ProdEnum.LEITE.value)
-#print(ProdEnum.LEITE.name)
