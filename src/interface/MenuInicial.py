@@ -14,5 +14,4 @@ class MenuIncial(Menu):
         entrada = int(input(":").replace(" ", ""))
 
 
-        #if entrada == 0:
-            #alguma coisa pra trocar o estoque pro menu adm
+        #return entrada
