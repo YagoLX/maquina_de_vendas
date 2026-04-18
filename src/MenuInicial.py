@@ -17,9 +17,12 @@ class MenuInicial(Menu):
             return "dosada"
         
         if entrada == 2:
-            return "lata"
+            return "latas"
         
         if entrada == 0:
             return "adm"
+        else:
+            print("Tente novamente")
+            return "inicial"
             
         #return entrada

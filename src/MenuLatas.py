@@ -1,10 +1,11 @@
 from Menu import Menu
-from Estoque import Estoque
+from Maquina import Maquina
+
 
 class MenuLatas(Menu):
     def rodar(self, maquina):
-        
         print("voce entrou no menu latas")
+        
         return None
         
 

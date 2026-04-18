@@ -6,5 +6,6 @@ class Maquina:
         self.estoque = Estoque()
         self.preco_lata = 10
         self.saldo = 0
+    
 
 
