@@ -20,3 +20,19 @@ Menu: prints e interação com o usuario
 - criar menu dosadas   -> Vitinho
 - criar menu pagamento -> Sali
 - criar menu adm       -> Sali
+
+
+## Lista de Produtos
+### Latas
+buzzcola 
+guarana
+mineirinho
+brawndo
+suco
+
+### Dosados
+leite 
+cafe
+cha
+achocolatado
+lactobacilos

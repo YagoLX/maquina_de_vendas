@@ -72,12 +72,6 @@ class  Estoque:
         else:
             print("Operação Inválida: Produto consultado não existe")
 
-x = Estoque()
-x.set_quantidade("leite", 10)
-x.add_quantidade("buzzcola", 5)
-print(str(x.armazenamento_dosada["leite"]) + ", " +str(x.armazenamento_lata["buzzcola"]))
-y = x.get_quantidade('leite')
-print(str(y))
 
 
 
