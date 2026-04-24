@@ -3,9 +3,9 @@ O objetivo desse repositório é particar os conhecimentos obtido de POO na disc
 
 ## Rodando o codigo
 Você deve estar no diretorio __maquina_de_vendas__ devido a forma como os imports funcionam em python
-` `
+` 
 python3 src/main.py
-` `
+` 
 ## Estrutura do Código
 Maquina: é onde guardamos as informações permanentes durante nossa execução, e implementamos algumas funções que tem a ver com essas informações. Para deixar mais claro, fica de exemplo o saldo da nossa máquina e uma função set_saldo
 
