@@ -23,4 +23,7 @@ while menu_atual != None:
         break
     menu_atual = menus[prox]()
 
+    
+
+
 
