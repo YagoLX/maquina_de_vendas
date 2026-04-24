@@ -1,5 +1,5 @@
 from Estoque import Estoque 
-from Maquina  import Maquina
+from Maquina  import Maquina, ler_arquivo
 from MenuAdm import MenuAdm
 from MenuDosada import MenuDosada
 from MenuInicial import MenuInicial
@@ -7,6 +7,8 @@ from MenuLatas import MenuLatas
 from MenuPagamento import MenuPagamento 
 
 maquina = Maquina()
+ler_arquivo(maquina)
+
 menus = {
     "inicial": MenuInicial,
     "latas": MenuLatas,
