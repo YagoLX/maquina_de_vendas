@@ -10,28 +10,34 @@ class Maquina:
         self.saldo = 0
         self.nvendas = 0
 
-#Depois a inicializacao deve vir de um arquivo .txt ou .csv
-
-    @classmethod
-    def do_arquivo(self, caminho):
-        with open(caminho) as arq:
+#Atualiza os dados da maquina com os dados do csv.
+    def ler_arquivo(self):
+        with open('Estoque.csv') as arq:
             reader = csv.reader(arq)
             lista = list(reader)
             self.saldo = lista[0][0]
             self.nvendas = lista[0][1]
+            self.estoque = Estoque()
+            self.preco_lata = 10
+            self.preco_dosada = 5
+            dosada = list(self.estoque.armazenamento_dosada)
+            lata = list(self.estoque.armazenamento_lata)
+            for i in range(5):
+                self.estoque.armazenamento_dosada[dosada[i]] += int(lista[6][i])
+                self.estoque.armazenamento_lata[lata[i]] += int(lista[i+1][0])  #tem que ter o shift por conta do csv
 
 #Saldo - nao coloquei set_saldo porque nao faz sentido colocar um saldo na maquina, ela nao da troco.
-    #retorna o saldo - menu adm
-    def get_saldo(self):
-        return self.saldo
     #adiciona o saldo - menu pagamento
     def add_saldo(self, value):
         self.saldo += value
+    #retorna o saldo - menu adm
+    def get_saldo(self):
+        return self.saldo
     #zera o saldo - menu adm
     def sacar_saldo(self):
         aux = self.saldo
         self.saldo = 0
-        return aux
+        print(f"voce sacou: {aux} reais")
     
 #Numero de vendas
     #retorna o numero de vendas - menu adm
@@ -41,21 +47,23 @@ class Maquina:
     def add_nvendas(self):
         self.nvendas += 1
 
+#Funcao salvar - atualizar o csv com saldo, numero de vendas e estoque
     def salvar_tudo(self):
+        with open('Estoque.csv') as arq:
+            writer = csv.writer(arq)
+            writer.writerow(0) = [self.saldo, self.nvendas]
+            dosada = list(self.estoque.armazenamento_dosada)
+            lata = list(self.estoque.armazenamento_lata)
+            linha_dosada = []
+            for i in range(5):
+                linha_dosada.append(self.estoque.armazenamento_dosada[dosada[i]])
+                writer.writerow(i+1) = self.estoque.armazenamento_lata[lata[i]]
+            writer.writerow(5) = linha_dosada
+
         ##escrever no csv
-    
-'''
-to-do:
-- Criar uma funcao que aumenta o saldo
-- Criar uma funcao que manipula o estoque quando compra uma lata ou dosada a depender da posicao
-- Criar uma funcao que faz o saque do saldo
-- Criar tudo que yagao colocou na foto do gpo do matzao
-- 
-- Criar uma funcao que salva tudo no txt quando desligar a maquina   (final)
 
-'''
-
-    def set_quantidade (self, bebida, quantidade):
+#Quantidades
+    def set_quantidade(self, bebida, quantidade):
         self.estoque.set_quantidade(bebida, quantidade)
 
     def get_quantidade(self, bebida):
@@ -64,5 +72,3 @@ to-do:
     def add_quantidade(self,bebida,quantidade):
         self.estoque.add_quantidade(bebida,quantidade)
     
-
-
