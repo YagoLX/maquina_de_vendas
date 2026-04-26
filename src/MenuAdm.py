@@ -97,5 +97,6 @@ class MenuAdm(Menu):
             print("Escolha inválida")
             return "MenuAdm"
 
+        maquina.salvar_tudo()
         return None
         #return entrada
