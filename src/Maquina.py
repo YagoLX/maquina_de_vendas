@@ -61,8 +61,6 @@ class Maquina:
                 writer.writerow(aux)
             writer.writerow(linha_dosada)
 
-        ##escrever no csvriar maquina e funcoes de manipulacao e consulta dele (saldo numero de vendas etc) -> pietro
-
 #Quantidades
     def set_quantidade(self, bebida, quantidade):
         self.__estoque.set_quantidade(bebida, quantidade)
@@ -72,4 +70,7 @@ class Maquina:
 
     def add_quantidade(self,bebida,quantidade):
         self.__estoque.add_quantidade(bebida,quantidade)
+     
+    def get_quantidade_cliente(self, bebida, quantidade_cliente):
+        return quantidade_cliente
     
