@@ -1,7 +1,6 @@
 from Estoque import Estoque
 import csv
 
-#equivalente ao conceito de blackboard
 class Maquina:
     def __init__(self):
         self.__estoque = Estoque()
