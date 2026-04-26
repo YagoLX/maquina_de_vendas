@@ -15,12 +15,16 @@ class MenuPagamento(Menu):
 
         if escolha == 1:
            maquina.add_saldo(maquina.get_valor_pago())
+           maquina.add_nvendas()
         elif escolha == 2:
             maquina.add_saldo(maquina.get_valor_pago())
+            maquina.add_nvendas()
         elif escolha == 3:
             maquina.add_saldo(maquina.get_valor_pago())
+            maquina.add_nvendas()
         elif escolha == 4:
             maquina.add_saldo(maquina.get_valor_pago())
+            maquina.add_nvendas()
         else:
             print("Escolha inválida")
 
