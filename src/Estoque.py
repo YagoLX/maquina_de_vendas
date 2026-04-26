@@ -22,7 +22,7 @@ class  Estoque:
     #Verificar se a bebida é lata ou dosada
     def eh_lata(self, bebida):
         nome_bebida = self.__ajustar_nome(bebida)
-        if nome_bebida in self.armazenamento_dosada:
+        if nome_bebida in self.armazenamento_lata:
             return True
         elif nome_bebida in self.armazenamento_dosada:
             return False
