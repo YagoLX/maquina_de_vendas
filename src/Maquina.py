@@ -11,6 +11,7 @@ class Maquina:
         self.__nvendas = 0
         self.__quantidade_cliente = 0
         self.__bebida = "vazio"
+        self.__valor_pago = 0
 
 #Atualiza os dados da maquina com os dados do csv.
     def ler_arquivo(self):
@@ -20,8 +21,8 @@ class Maquina:
             self.saldo = int(lista[0][0])
             self.__nvendas = int(lista[0][1])
             self.__estoque = Estoque()
-            self.__preco_lata = 10
-            self.__preco_dosada = 5
+            #self.__preco_lata = 10
+            #self.__preco_dosada = 5
             dosada = list(self.__estoque.armazenamento_dosada)
             lata = list(self.__estoque.armazenamento_lata)
             for i in range(5):
@@ -74,28 +75,34 @@ class Maquina:
         self.__estoque.add_quantidade(bebida,quantidade)
      
     def get_quantidade_cliente(self):
-        return self.quantidade_cliente
+        return self.__quantidade_cliente
     
     def set_quantidade_cliente(self, quantidade_cliente):
-        self.quantidade_cliente = quantidade_cliente
+        self.__quantidade_cliente = quantidade_cliente
 
     def get_bebida (self):
-        return self.bebida
+        return self.__bebida
 
     def set_bebida (self, bebida):
-        self.bebida = bebida
+        self.__bebida = bebida
 
     def eh_lata (self, bebida):
-        return self.estoque.eh_lata(bebida)
+        return self.__estoque.eh_lata(bebida)
 
     def set_preco_lata(self, preco_lata):
-        self.preco_lata = preco_lata
+        self.__preco_lata = preco_lata
 
     def get_preco_lata(self):
-        return self.preco_lata
+        return self.__preco_lata
 
     def set_preco_dosada(self, preco_dosada):
-        self.preco_dosada = preco_dosada
+        self.__preco_dosada = preco_dosada
 
     def get_preco_dosada(self):
-        return self.preco_dosada
+        return self.__preco_dosada
+    
+    def get_valor_pago(self):
+        return self.__valor_pago
+    
+    def set_valor_pago(self, valor_pago):
+        self.__valor_pago = valor_pago
