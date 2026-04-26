@@ -71,13 +71,3 @@ class  Estoque:
             return self.armazenamento_dosada[nome]
         else:
             print("Operação Inválida: Produto consultado não existe")
-
-
-
-estoque = Estoque()
-print(estoque.get_quantidade("cafe"))
-estoque.set_quantidade("cafe",10)
-print(estoque.get_quantidade("cafe"))
-estoque.add_quantidade("cafe",10)
-print(estoque.get_quantidade("cafe"))
-print(estoque.add_quantidade("cafe", -21))
