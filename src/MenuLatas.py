@@ -35,7 +35,7 @@ class MenuLatas(Menu):
                 return "inicial"
 
         #Settar a quantidade de cada estoque deve ser feita no menu de ADM previamente!!!!
-        maquina.set_quantidade(bebida, 10)
+        #maquina.set_quantidade(bebida, 10)
         quantidade = maquina.get_quantidade(bebida)
 
         #checar estoque
@@ -59,30 +59,27 @@ class MenuLatas(Menu):
         #Cálculo do Preço
         preco = quantidade_cliente * maquina.get_preco_lata()
         
-
         print("CONFIRMAÇÃO PEDIDO")
         print("Você pediu ",quantidade_cliente, bebida)
         print("Ao todo ficou ",preco, "reais")
         print("Gostaria de proseguir para o pagamento?")
         print("[1] sim")
-        print("[2] não")
+        print("[0] não")
         pagamento = int(input(":").replace(" ", ""))
 
         Valida = False
         while(not Valida):
                 if (pagamento == 1):
-                        invalida = False
-
                         #Alterar estoque
                         maquina.add_quantidade(bebida, -quantidade_cliente)
                         #Passar funcao para menu Pagamento
                         maquina.set_valor_pago(preco)
+                        maquina.salvar_tudo()
                         return "pagamento"
                         break
 
                 elif (pagamento == 0):
-                        
-                        invalida = False
+                        print("Que pena, gostaria de mais algo?")
                         return "inicial"
                         break
                 else: 
@@ -90,10 +87,8 @@ class MenuLatas(Menu):
 
                 print("Gostaria de proseguir para o pagamento?")
                 print("[1] sim")
-                print("[2] não")
+                print("[0] não")
                 pagamento = int(input(":").replace(" ", ""))
-
-
 
 
         return None
