@@ -15,8 +15,8 @@ class Maquina:
         with open('Estoque.csv') as arq:
             reader = csv.reader(arq)
             lista = list(reader)
-            self.saldo = lista[0][0]
-            self.nvendas = lista[0][1]
+            self.saldo = int(lista[0][0])
+            self.nvendas = int(lista[0][1])
             self.estoque = Estoque()
             self.preco_lata = 10
             self.preco_dosada = 5
@@ -49,16 +49,16 @@ class Maquina:
 
 #Funcao salvar - atualizar o csv com saldo, numero de vendas e estoque
     def salvar_tudo(self):
-        with open('Estoque.csv') as arq:
+        with open('Estoque.csv', 'w') as arq:
             writer = csv.writer(arq)
-            writer.writerow(0) = [self.saldo, self.nvendas]
+            writer.writerow([self.saldo, self.nvendas])
             dosada = list(self.estoque.armazenamento_dosada)
             lata = list(self.estoque.armazenamento_lata)
             linha_dosada = []
             for i in range(5):
                 linha_dosada.append(self.estoque.armazenamento_dosada[dosada[i]])
-                writer.writerow(i+1) = self.estoque.armazenamento_lata[lata[i]]
-            writer.writerow(5) = linha_dosada
+                writer.writerow(self.estoque.armazenamento_lata[lata[i]])
+            writer.writerow(linha_dosada)
 
         ##escrever no csv
 
