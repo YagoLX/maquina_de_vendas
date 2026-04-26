@@ -5,7 +5,22 @@ from Maquina import Maquina
 class MenuLatas(Menu):
 
     def rodar(self, maquina):
-        print("Temos disponíveis as seguintes opções")
+
+        print (" ")
+        print (" ")
+        print (" ")
+        print (" ")
+        print("ESCOLHA SUA LATINHA")
+        print("No momento temos disponível para sua bebida")
+        tem_estoque ("buzzcola", maquina)
+        tem_estoque ("guarana", maquina)
+        tem_estoque ("mineirinho", maquina)
+        tem_estoque ("brawndo", maquina)
+        tem_estoque ("suco", maquina)
+
+        print (" ")
+        print (" ")
+        print("Escolha sua bebida")
         print("[1] buzzcola")
         print("[2] guarana")
         print("[3] mineirinho")
@@ -13,8 +28,6 @@ class MenuLatas(Menu):
         print("[5] suco")
         print("[6] voltar para menu inicial")   
         escolha = int(input(":").replace(" ", ""))
-
-        print ("Você escolheu", escolha)
 
 
         if escolha == 1:
@@ -34,16 +47,12 @@ class MenuLatas(Menu):
                 print (" ")
                 return "inicial"
 
-        #Settar a quantidade de cada estoque deve ser feita no menu de ADM previamente!!!!
-        #maquina.set_quantidade(bebida, 10)
         quantidade = maquina.get_quantidade(bebida)
 
         #checar estoque
         if quantidade == 0:
             print ("Não temos essa opção, gostaria de outra bebida?")
             return "latas"
-       
-        maquina.set_bebida(bebida)
 
         print("Gostaria de quantas latas?")
         quantidade_cliente = int(input(":").replace(" ", ""))
@@ -53,14 +62,11 @@ class MenuLatas(Menu):
             print ("Não temos isso tudo :(, gostaria de outra bebida?")
             return "latas"
 
-        #Passar para alguma função quanto o cliente pediu
-        #maquina.set_quantidade_cliente(quantidade_cliente)
-
         #Cálculo do Preço
         preco = quantidade_cliente * maquina.get_preco_lata()
         
         print("CONFIRMAÇÃO PEDIDO")
-        print("Você pediu ",quantidade_cliente, bebida)
+        print("Você pediu",quantidade_cliente, bebida)
         print("Ao todo ficou ",preco, "reais")
         print("Gostaria de proseguir para o pagamento?")
         print("[1] sim")
@@ -92,3 +98,10 @@ class MenuLatas(Menu):
 
 
         return None
+
+def tem_estoque (nome_bebida, maquina):
+        qtdd = maquina.get_quantidade(nome_bebida)
+        if qtdd == 0:
+                print("Não temos", nome_bebida, ":(")
+
+        else: print("Temos", qtdd, nome_bebida)

@@ -20,10 +20,12 @@ class MenuAdm(Menu):
             print("Defina o preco das latas: ")
             preco_lata = int(input(":").replace(" ", ""))
             maquina.set_preco_lata(preco_lata)
+            return "inicial"
         elif escolha == 2:
             print("Defina o preco das bebidas dosadas: ")
             preco_dosada = int(input(":").replace(" ", ""))
             maquina.set_preco_lata(preco_dosada)
+            return "incial"
         elif escolha == 3:
             print("Qual lata quer adicionar na maquina: ")
             print("[1] buzzcola")
