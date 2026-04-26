@@ -53,7 +53,7 @@ class  Estoque:
             else: print("Operacao inválida: a quantidade final deve ser não negativa")
 
         elif nome in self.armazenamento_dosada:
-            if self.armazenamento_lata[nome] + quantidade >= 0:
+            if self.armazenamento_dosada[nome] + quantidade >= 0:
                 self.armazenamento_dosada[nome] += int(quantidade)
             else: print("Operacao inválida: a quantidade final deve ser não negativa")
 
@@ -74,4 +74,10 @@ class  Estoque:
 
 
 
-
+estoque = Estoque()
+print(estoque.get_quantidade("cafe"))
+estoque.set_quantidade("cafe",10)
+print(estoque.get_quantidade("cafe"))
+estoque.add_quantidade("cafe",10)
+print(estoque.get_quantidade("cafe"))
+print(estoque.add_quantidade("cafe", -21))
