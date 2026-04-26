@@ -16,6 +16,7 @@ class MenuLatas(Menu):
 
         print ("Você escolheu", escolha)
 
+
         if escolha == 1:
                 bebida = "buzzcola"
         if escolha == 2:
@@ -42,6 +43,8 @@ class MenuLatas(Menu):
             print ("Não temos essa opção, gostaria de outra bebida?")
             return "latas"
        
+        maquina.set_bebida(bebida)
+
         print("Gostaria de quantas latas?")
         quantidade_cliente = int(input(":").replace(" ", ""))
 
@@ -50,27 +53,47 @@ class MenuLatas(Menu):
             print ("Não temos isso tudo :(, gostaria de outra bebida?")
             return "latas"
 
-        print ("O preço total fica:", quantidade_cliente*maquina.preco_lata, "R$")
+        #Passar para alguma função quanto o cliente pediu
+        #maquina.set_quantidade_cliente(quantidade_cliente)
 
-        print ("Qual forma de pagamento?")
-
-        print ("Aproveite sua bebida :)")
-
-        #Ajustar estoque e saldo
-        maquina.saldo = maquina.saldo + quantidade_cliente*maquina.preco_lata
-        maquina.add_quantidade(bebida, -quantidade_cliente)
-
+        #Cálculo do Preço
+        preco = quantidade_cliente * maquina.get_preco_lata()
         
-        #Testes de saldo e quantidade estoque
 
-        print (" ")
-        print("---------Teste Máquina-------------")
-        print ("Saldo final da máquina", maquina.saldo, "R$")
-        print ("Estoque final de ",bebida, "foi de ",maquina.get_quantidade(bebida))
+        print("CONFIRMAÇÃO PEDIDO")
+        print("Você pediu ",quantidade_cliente, bebida)
+        print("Ao todo ficou ",preco, "reais")
+        print("Gostaria de proseguir para o pagamento?")
+        print("[1] sim")
+        print("[2] não")
+        pagamento = int(input(":").replace(" ", ""))
+
+        Valida = False
+        while(not Valida):
+                if (pagamento == 1):
+                        invalida = False
+
+                        #Alterar estoque
+                        maquina.add_quantidade(bebida, -quantidade_cliente)
+                        #Passar funcao para menu Pagamento
+                        maquina.set_valor_pago(preco)
+                        return "pagamento"
+                        break
+
+                elif (pagamento == 0):
+                        
+                        invalida = False
+                        return "inicial"
+                        break
+                else: 
+                        print("Opção Inválida")
+
+                print("Gostaria de proseguir para o pagamento?")
+                print("[1] sim")
+                print("[2] não")
+                pagamento = int(input(":").replace(" ", ""))
+
+
 
 
         return None
-        
-
-
-        #return entrada

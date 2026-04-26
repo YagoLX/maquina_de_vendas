@@ -3,13 +3,19 @@ from Menu import Menu
 class MenuDosada(Menu):
     def rodar(self, maquina):
         
+
+        print("MONTE SUA BEBIDA")
+        print("Selecione sua bebida e a sua dosagem")
+
+
+
         print("Temos disponíveis as seguintes opções")
         print("[1] leite")
         print("[2] cafe")
         print("[3] cha")
         print("[4] achocolatado")
         print("[5] lactobacilos")
-        print("[6] voltar para menu inicial")   
+        print("[6] voltar para menu inicial")
         escolha = int(input(":").replace(" ", ""))
 
         if escolha == 1:
@@ -34,6 +40,8 @@ class MenuDosada(Menu):
 
         maquina.set_quantidade(bebida, 10)
         quantidade = maquina.get_quantidade(bebida)
+
+
 
 
 
