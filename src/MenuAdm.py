@@ -1,5 +1,3 @@
-from enum import nonmember
-
 from Menu import Menu
 
 class MenuAdm(Menu):
