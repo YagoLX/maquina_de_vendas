@@ -87,3 +87,15 @@ class Maquina:
 
     def eh_lata (self, bebida):
         return self.estoque.eh_lata(bebida)
+
+    def set_preco_lata(self, preco_lata):
+        self.preco_lata = preco_lata
+
+    def get_preco_lata(self):
+        return self.preco_lata
+
+    def set_preco_dosada(self, preco_dosada):
+        self.preco_dosada = preco_dosada
+
+    def get_preco_dosada(self):
+        return self.preco_dosada
