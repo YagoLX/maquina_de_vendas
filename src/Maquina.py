@@ -9,6 +9,8 @@ class Maquina:
         self.preco_dosada = 5
         self.saldo = 0
         self.nvendas = 0
+        self.quantidade_cliente = 0
+        self.bebida = "pinto"
 
 #Atualiza os dados da maquina com os dados do csv.
     def ler_arquivo(self):
@@ -71,6 +73,17 @@ class Maquina:
     def add_quantidade(self,bebida,quantidade):
         self.estoque.add_quantidade(bebida,quantidade)
      
-    def get_quantidade_cliente(self, bebida, quantidade_cliente):
-        return quantidade_cliente
+    def get_quantidade_cliente(self):
+        return self.quantidade_cliente
     
+    def set_quantidade_cliente(self, quantidade_cliente):
+        self.quantidade_cliente = quantidade_cliente
+
+    def get_bebida (self):
+        return self.bebida
+
+    def set_bebida (self, bebida):
+        self.bebida = bebida
+
+    def eh_lata (self, bebida):
+        return self.estoque.eh_lata(bebida)
