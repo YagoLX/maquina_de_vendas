@@ -57,7 +57,6 @@ class MenuLatas(Menu):
         print ("Aproveite sua bebida :)")
 
         #Ajustar estoque e saldo
-
         maquina.saldo = maquina.saldo + quantidade_cliente*maquina.preco_lata
         maquina.add_quantidade(bebida, -quantidade_cliente)
 

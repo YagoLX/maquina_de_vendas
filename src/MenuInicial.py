@@ -4,7 +4,7 @@ class MenuInicial(Menu):
     def rodar(self, maquina):
         #while(True){
         print("ola, entrou no rodar do inicial")
-        print("Bem vindo a cafeteira 3000 ultraevolution"  )
+        print("Bem vindo a cafeteira 3000 ultraevolution")
         print(" ")
         print("Selecione uma opção!")
         print("[1] Monte sua própria bebida!")

@@ -7,6 +7,8 @@ from MenuLatas import MenuLatas
 from MenuPagamento import MenuPagamento 
 
 maquina = Maquina()
+maquina.ler_arquivo()
+
 menus = {
     "inicial": MenuInicial,
     "latas": MenuLatas,
