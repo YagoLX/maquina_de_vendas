@@ -51,16 +51,15 @@ class Maquina:
     def salvar_tudo(self):
         with open('Estoque.csv', 'w') as arq:
             writer = csv.writer(arq)
-            writer.writerow([self.saldo, self.nvendas])
+            writer.writerow([self.saldo, self.nvendas,'','',''])
             dosada = list(self.estoque.armazenamento_dosada)
             lata = list(self.estoque.armazenamento_lata)
             linha_dosada = []
             for i in range(5):
                 linha_dosada.append(self.estoque.armazenamento_dosada[dosada[i]])
-                writer.writerow(self.estoque.armazenamento_lata[lata[i]])
+                aux = [self.estoque.armazenamento_lata[lata[i]],'','','','']
+                writer.writerow(aux)
             writer.writerow(linha_dosada)
-
-        ##escrever no csv
 
 #Quantidades
     def set_quantidade(self, bebida, quantidade):
@@ -71,4 +70,7 @@ class Maquina:
 
     def add_quantidade(self,bebida,quantidade):
         self.estoque.add_quantidade(bebida,quantidade)
+     
+    def get_quantidade_cliente(self, bebida, quantidade_cliente):
+        return quantidade_cliente
     
